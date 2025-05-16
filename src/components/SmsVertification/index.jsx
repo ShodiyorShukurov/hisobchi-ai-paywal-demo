@@ -38,7 +38,7 @@ const ConfirmationCode = () => {
     MainButton.disable();
 
     try {
-        const response = await fetch(
+      const response = await fetch(
         `${import.meta.env.VITE_API_URL}/api/v1/add-card/` +
           localStorage.getItem('obunaPay'),
         {
@@ -47,8 +47,8 @@ const ConfirmationCode = () => {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            card_number: cardNumber,
-            expiry: expiryDate,
+            card_number: localStorage.getItem('cardNumber'),
+            expiry: localStorage.getItem('expiryDate'),
           }),
         }
       );
