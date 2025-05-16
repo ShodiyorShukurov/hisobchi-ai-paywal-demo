@@ -83,6 +83,8 @@ const ObunaPay = () => {
         message.error("Bu karta oldin qo'shilgan boshqa karta kiriting!");
       } else if (data.description == 'Неправильные параметры') {
         message.error("Karta ma'lumotlarini noto'g'ri!");
+      }else if (data.description == 'Внутренняя ошибка') {
+        message.error("Karta qo'llab-quvvatlanmaydi!");
       }
     } catch (error) {
       console.error('Error:', error);
