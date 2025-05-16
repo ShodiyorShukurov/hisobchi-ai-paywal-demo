@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #fff;
+  color: #000;
+}
+
+.title {
+  color: #1f2024;
+  font-size: 20px;
+  line-height: 100%;
+  font-weight: 800;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+input {
+  padding: 16px;
+  font-size: 16px;
+  line-height: 16px;
+  border: 0.5px solid #c5c6cc;
+  border-radius: 12px;
+  outline: none;
+}
+
+input::placeholder{
+  color:#71727A;
+}
+
+.card-number {
+  width: 100%;
+}
+
+h2 {
+  margin-top: 32px;
+  margin-bottom: 10px;
+  color: #71727A;
+  font-size: 16px;
+  text-align: left;
+  font-weight: 600;
+  line-height: 100%;
+}
+
+p{
+  color: #71727A;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: left;
+}
+
+.medium{
+  margin: 10px 0;
+}
+
+.card-expiry {
+  width: 100%;
+}
+
+
+.security-info a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.security-info a:hover {
+  text-decoration: underline;
+}
+
+.footer {
+  margin-top: 30px;
+}
+
+.payme-logo img {
+  width: 80px;
+}
+
+.sticky-button {
+  position: relative;
+}
+
+.confirm-btn {
+  margin: 0px auto;
+  margin-top: 30px;
+  text-align: center;
+  padding: 10px;
+  max-width: 360px;
+  width: 100%;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.confirm-btn:hover {
+  background-color: #0056b3;
+}
+
+.loader {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
