@@ -186,43 +186,28 @@ const ConfirmationCode = () => {
       </div>
 
       <form>
-       {/* <Input.OTP
-          ref={inputRef}
-          value={code}
-          onChange={(e) =>
-            setCode(e.target.value.replace(/\D/g, '').slice(0, 6))
-          }
-          inputMode="numeric"
-          formatter={(s) => s.toUpperCase()}
-          onPaste={handlePaste}
-          className="custom-otp-input"
-          style={{ fontSize: '16px' }}
-        />*/}
+      <OTPInput
+  value={code}
+  onChange={(val) => setCode(val)} // e emas!
+  numInputs={6}
+  inputStyle={{
+    padding: '2px 6px',
+    backgroundColor: '#FFF',
+    borderRadius: '8px',
+    width: '45px',
+    height: '48px',
+    outline: 'none',
+    fontSize: '16px',
+    fontWeight: '600',
+    lineHeight: '24px',
+  }}
+  placeholder="------"
+  renderSeparator={
+    <span style={{ width: '10px', display: 'inline-block' }}></span>
+  }
+  renderInput={(props) => <input {...props} inputMode="numeric" />}
+/>
 
-         <OTPInput
-          value={code}
-          onChange={(e) =>
-            setCode(e.target.value.replace(/\D/g, '').slice(0, 6))
-          }
-          numInputs={6}
-          inputStyle={{
-            padding: '2px 6px',
-            backgroundColor: '#FFF',
-            borderRadius: '8px',
-            width: '45px',
-            height: '48px',
-            outline: 'none',
-            fontSize: '16px',
-            fontWeight: '600',
-            lineHeight: '24px',
-            // border: otpError ? '2px solid #FF3B30' : 'none',
-          }}
-          placeholder="------"
-          renderSeparator={
-            <span style={{ width: '10px', display: 'inline-block' }}></span>
-          }
-          renderInput={(props) => <input {...props} inputMode="numeric" />}
-        />
       </form>
 
       {localStorage.getItem('phone') && (
