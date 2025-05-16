@@ -39,7 +39,7 @@ const ConfirmationCode = () => {
 
     try {
       const response = await fetch(
-        'https://bot.admob.uz/api/v1/add-card/' +
+        `${import.meta.env.VITE_API_URL}/add-card/` +
           localStorage.getItem('obunaPay'),
         {
           method: 'POST',
