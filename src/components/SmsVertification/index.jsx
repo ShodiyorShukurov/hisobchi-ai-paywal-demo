@@ -55,14 +55,18 @@ const ConfirmationCode = () => {
 
       const data = await response.json();
 
-      if (data.status == 400) {
+     if (data.status == 400) {
         message.error('Iltimos, nomerga ulangan kartani kiriting!');
       } else if (data.status == 200) {
         localStorage.setItem('transaction_id', data.transaction_id);
         localStorage.setItem('phone', data.phone);
-        // navigate('/sms-verification');
+        navigate('/sms-verification');
       } else if (data.description == 'У партнера имеется указанная карта') {
         message.error("Bu karta oldin qo'shilgan boshqa karta kiriting!");
+      } else if (data.description == 'Неправильные параметры') {
+        message.error("Karta ma'lumotlarini noto'g'ri!");
+      }else if (data.description == 'Внутренняя ошибка') {
+        message.error("Karta qo'llab-quvvatlanmaydi!");
       }
     } catch (error) {
       console.error('Error:', error);
@@ -76,10 +80,7 @@ const ConfirmationCode = () => {
   };
 
   const openNotificationWithIcon = (type, message) => {
-    notification[type]({
-      message: type,
-      description: message,
-    });
+    message?.[type]( message);
   };
 
   const handleConfirm = async (code) => {
